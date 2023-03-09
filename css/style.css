@@ -7,12 +7,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+header h1 {
+  margin: 0;
+}
 
 .bg-grey {
   background: #f7f7f7;
 }
 
-section > .container {
+section > .mycontainer {
   display: block;
 }
 
@@ -59,7 +62,7 @@ a:visited {
 /* #nav-bar {
     
 } */
-#nav-bar nav.container {
+#nav-bar .mycontainer {
   display: grid;
   grid-template-columns: 140px 140px 350px 140px 140px;
   justify-content: center;
@@ -105,12 +108,12 @@ a:visited {
 #about {
   margin: 0 48px 48px;
 }
-#about div.container {
-  background-color: #b9f3e4;
+#about .mycontainer {
   display: flex;
   gap: 0px;
 }
 #target {
+  background-color: #b9f3e4;
   background-image: linear-gradient(to right, #b9f3e4, #99f1d9);
   flex: 1 1 50%;
 }
@@ -129,6 +132,7 @@ a:visited {
   margin-bottom: 64px;
 }
 #personal-info {
+  background-color: #b9f3e4;
   background-image: linear-gradient(to right, #b9f3e4, #99f1d9);
   flex: 1 1 50%;
 }
@@ -161,7 +165,7 @@ a:visited {
 #job-info {
   margin: 0 48px 48px;
 }
-#job-info div.container {
+#job-info .mycontainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr auto;
@@ -233,7 +237,6 @@ a:visited {
   content: "•";
   position: absolute;
   left: 36px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,22 +247,25 @@ a:visited {
   color: #339af0;
   background-color: #ffff;
   border-radius: 50%;
+  /* It displayed weirdly after including Boostrap5
+     so I added this line to make it the center of its border again */
+  padding-bottom: 5px;
 }
 /* Lower row */
 /* Hobby */
-.hobby-container {
+.hobby-mycontainer {
   display: flex;
   justify-content: space-evenly;
 
   padding-top: 36px;
 }
-.hobby-container .job-info-items-content {
+.hobby-mycontainer .job-info-items-content {
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.hobby-container .job-info-items-content span {
+.hobby-mycontainer .job-info-items-content span {
   font-size: 14px;
 }
 .hobby-icon {
@@ -310,7 +316,7 @@ a:visited {
   margin: 0 48px 48px;
   background-color: #b9f3e4;
 }
-#certificate div.container {
+#certificate .mycontainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr auto;
@@ -339,8 +345,6 @@ a:visited {
 }
 .certificate-items img {
   max-width: 50%;
-  max-height: auto;
-  translate: scale(0.8, 0.8);
   flex: 1 1 50%;
 }
 .certificate-items-text {
@@ -363,7 +367,7 @@ a:visited {
 #project {
   margin: 0 48px 48px;
 }
-#project div.container {
+#project .mycontainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr;
@@ -438,23 +442,221 @@ table {
   font-weight: 400;
   background-color: #20c997;
 }
-#footer .container {
+#footer .mycontainer {
   padding: 24px 12px;
 }
 
-#footer .container ul {
+#footer .mycontainer ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   justify-content: center;
   gap: 48px;
 }
-#footer .container li {
+#footer .mycontainer li {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 .footer-icon {
   color: #1864ab;
-  font-size: 30px;
+  font-size: 36px;
+}
+/* Still for screens larger than tablet */
+@media (max-width: 900px) {
+  .banner-text .banner-title {
+    font-size: 3rem;
+  }
+}
+
+/* Tablet 
+   Table screen size: 481px - 768px
+*/
+@media (max-width: 768px) {
+  body::before {
+    content: "TABLET";
+    color: RED;
+    position: fixed;
+    z-index: 100;
+  }
+  /* Banner */
+  .banner-text .banner-title {
+    font-size: 2rem;
+  }
+  .banner-text .job-title {
+    font-size: 1.2rem;
+  }
+  /* Nav-bar */
+  .nav-items.nav-bar-name {
+    display: none;
+  }
+  #nav-bar .mycontainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .nav-items {
+    height: auto;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  /* About section */
+  #about {
+    margin: 0 12px 48px;
+  }
+  #about .section-title {
+    font-size: 1.3rem;
+    height: 5em;
+  }
+  #target p {
+    font-size: 0.9rem;
+  }
+  /* Job-info section */
+  #job-info {
+    margin: 0 12px 48px;
+  }
+  #job-info .mycontainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(22, 50px);
+  }
+  .job-info-items--experience {
+    grid-row: 1 / span 12;
+    grid-column: 1 / 2;
+  }
+  .job-info-items--education {
+    grid-row: 1 / span 7;
+    grid-column: 2 / 3;
+  }
+  .job-info-items--education .job-info-items-content {
+    margin-bottom: 20px;
+  }
+  .job-info-items--language {
+    grid-row: 13 / span 6;
+    grid-column: 1 / 2;
+  }
+  .job-info-items--activity {
+    grid-column: 2 / 3;
+    grid-row: 8 / span 7;
+  }
+
+  .job-info-items--hobby {
+    grid-column: 1 / 2;
+    grid-row: 19 / span 5;
+  }
+  .job-info-items--skill {
+    grid-column: 2 / 3;
+    grid-row: 15 / span 9;
+  }
+  /* Certificate section */
+  #certificate {
+    margin: 0 12px 48px;
+  }
+  .certificate-items {
+    flex-direction: column;
+  }
+  .certificate-items img {
+    max-width: 100%;
+    flex: 0 0 50%;
+  }
+  /* Create a left border */
+  .certificate-items--second {
+    position: relative;
+  }
+
+  .certificate-items--second::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 85%;
+    border-left: 1px solid #000;
+  }
+  .certificate-items--second img {
+    border-left: none;
+    padding-left: 0;
+  }
+  /* Project */
+  #project {
+    margin: 0 12px 48px;
+  }
+  #project .mycontainer {
+    gap: 12px;
+  }
+  .project-items-text > div {
+    flex-wrap: wrap;
+  }
+  .project-items-text h3 {
+    height: 4rem;
+  }
+  /* Footer */
+  .footer-icon {
+    font-size: 200%;
+  }
+}
+/* Mobile section.
+   Normally, mobile screens end at 480px and that is where iPad, Tablet screens start
+   but in this particular case, our website contains alot of cards and their's sizes are not really
+   fluid. So a small screen with the size of 550px when displays our contents, the cards would be strectch out really
+   long and doesn't give the users a good experience. Hence even when the users are at tablet with 
+   the screen smaller than 650px, I would still make it displays the way it would if it was on mobile screens.
+   So my mobile screen would expand from 320px to 650px for this particular case. 
+*/
+@media (max-width: 650px) {
+  body::before {
+    content: "MOBILE";
+    color: RED;
+    position: fixed;
+    z-index: 100;
+  }
+  /* Nav-bar */
+  .nav-items.nav-bar-name {
+    display: none;
+  }
+  #nav-bar .mycontainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .nav-items,
+  .nav-items:first-child {
+    border: none;
+  }
+  /* About */
+  #about .mycontainer {
+    flex-direction: column;
+    gap: 25px;
+  }
+  /* Job-info */
+  #job-info .mycontainer {
+    /* Use flex instead of grid because if I use grid, I'm gonna have to disable all the space specifying for every
+       single items in this container which is set at the tablet section. Flex will get the job done perfectlly.
+    */
+    display: flex;
+    flex-direction: column;
+  }
+  /* Certificate section */
+  #certificate .mycontainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .certificate-items--second::before {
+    display: none;
+  }
+  /* Project */
+  #project .mycontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .project-items {
+    padding-top: 0;
+  }
+  /* The prototype tells me to do it like this but I think spreading it into one row is way better */
+  .project-items-text > div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* Footer */
+  .hide {
+    display: none;
+  }
 }
