@@ -1,0 +1,117 @@
+diff --git a/css/style.css b/css/style.css
+index b763d78..767886d 100755
+--- a/css/style.css
++++ b/css/style.css
+@@ -59,7 +59,7 @@ a:visited {
+ /* #nav-bar {
+     
+ } */
+-#nav-bar nav.container {
++#nav-bar .container {
+   display: grid;
+   grid-template-columns: 140px 140px 350px 140px 140px;
+   justify-content: center;
+@@ -105,12 +105,13 @@ a:visited {
+ #about {
+   margin: 0 48px 48px;
+ }
+-#about div.container {
+-  background-color: #b9f3e4;
++#about .container {
+   display: flex;
+   gap: 0px;
+ }
++
+ #target {
++  background-color: #b9f3e4;
+   background-image: linear-gradient(to right, #b9f3e4, #99f1d9);
+   flex: 1 1 50%;
+ }
+@@ -129,6 +130,7 @@ a:visited {
+   margin-bottom: 64px;
+ }
+ #personal-info {
++  background-color: #b9f3e4;
+   background-image: linear-gradient(to right, #b9f3e4, #99f1d9);
+   flex: 1 1 50%;
+ }
+@@ -161,7 +163,7 @@ a:visited {
+ #job-info {
+   margin: 0 48px 48px;
+ }
+-#job-info div.container {
++#job-info .container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: 1fr auto;
+@@ -310,7 +312,7 @@ a:visited {
+   margin: 0 48px 48px;
+   background-color: #b9f3e4;
+ }
+-#certificate div.container {
++#certificate .container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto 1fr auto;
+@@ -363,7 +365,7 @@ a:visited {
+ #project {
+   margin: 0 48px 48px;
+ }
+-#project div.container {
++#project .container {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: auto 1fr;
+@@ -458,3 +460,52 @@ table {
+   color: #1864ab;
+   font-size: 30px;
+ }
++
++@media (max-width: 768px) {
++  /* Banner  */
++  #banner .banner-title {
++    font-size: 2rem;
++  }
++  /* Navbar */
++  #nav-bar .container {
++    color: red;
++    display: flex;
++    flex-direction: column;
++    margin-bottom: 2rem;
++  }
++  #nav-bar .nav-items {
++    border: none;
++  }
++  #nav-bar .nav-bar-name {
++    order: -1;
++    margin-bottom: 2.5rem;
++  }
++  /* About */
++  #about .container {
++    flex-direction: column;
++    gap: 2rem;
++  }
++  /* Job-info */
++  #job-info .container {
++    display: flex;
++    flex-direction: column;
++  }
++  /* Certificate */
++  #certificate .container {
++    display: flex;
++    flex-direction: column;
++  }
++  #certificate .certificate-items--second img {
++    border-left: none;
++    padding: 0;
++  }
++  /* Project */
++  #project .container {
++    display: flex;
++    flex-direction: column;
++    gap: 2rem;
++  }
++  #project .project-items {
++    padding-top: 0;
++  }
++}
