@@ -593,8 +593,8 @@ table {
 }
 /* Mobile section.
    Normally, mobile screens end at 480px and that is where iPad, Tablet screens start
-   but in this particular case, our website contains alot of cards and their's sizes are not really
-   fluid. So a small screen with the size of 550px when displays our contents, the cards would be strectch out really
+   but in this particular case, our website contains alot of cards and their sizes are not really
+   fluid. So for a small screen with the size of 550px, when displays our contents, the cards would be stretched out really
    long and doesn't give the users a good experience. Hence even when the users are at tablet with 
    the screen smaller than 650px, I would still make it displays the way it would if it was on mobile screens.
    So my mobile screen would expand from 320px to 650px for this particular case. 
