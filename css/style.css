@@ -442,6 +442,7 @@ table {
    instead of the cards
 */
 .project-link-chart {
+  target: _blank;
   position: absolute;
   z-index: 1;
   height: 100%;
