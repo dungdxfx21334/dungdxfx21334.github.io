@@ -387,6 +387,7 @@ a:visited {
   flex-direction: column;
   background-color: #b9f3e4;
   padding-top: 4px;
+  position: relative;
 }
 
 .project-items img {
@@ -436,6 +437,19 @@ table {
   width: 30%;
   padding-left: 8px;
 }
+/* Make the links clickable through the cards. I can do this by wrapping the anchor tag around the card 
+   but doing so requires me to restyle the cards, because now the links are the direct children of the container
+   instead of the cards
+*/
+.project-link-chart {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
 /* Footer section */
 #footer {
   font-size: 18px;
@@ -462,6 +476,7 @@ table {
   color: #1864ab;
   font-size: 36px;
 }
+
 /* Still for screens larger than tablet */
 @media (max-width: 900px) {
   .banner-text .banner-title {
@@ -473,12 +488,12 @@ table {
    Table screen size: 481px - 768px
 */
 @media (max-width: 768px) {
-  body::before {
+  /* body::before {
     content: "TABLET";
     color: RED;
     position: fixed;
     z-index: 100;
-  }
+  } */
   /* Banner */
   #banner {
     height: 300px;
@@ -605,12 +620,12 @@ table {
    So my mobile screen would expand from 320px to 650px for this particular case. 
 */
 @media (max-width: 650px) {
-  body::before {
+  /* body::before {
     content: "MOBILE";
     color: RED;
     position: fixed;
     z-index: 100;
-  }
+  } */
   /* Banner */
   #banner {
     height: 300px;
@@ -683,6 +698,7 @@ table {
     align-items: center;
     text-align: center;
   }
+
   /* Footer */
 
   .hide {
