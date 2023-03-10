@@ -480,11 +480,16 @@ table {
     z-index: 100;
   }
   /* Banner */
-  .banner-text .banner-title {
-    font-size: 2rem;
+  #banner {
+    height: 300px;
+    width: 100%;
   }
-  .banner-text .job-title {
-    font-size: 1.2rem;
+
+  .banner-text {
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    flex: 1 0 100%;
   }
   /* Nav-bar */
   .nav-items.nav-bar-name {
@@ -606,6 +611,24 @@ table {
     position: fixed;
     z-index: 100;
   }
+  /* Banner */
+  #banner {
+    height: 300px;
+    width: 100%;
+  }
+
+  .banner-text {
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    flex: 1 0 100%;
+  }
+  .banner-text .banner-title {
+    font-size: 2.5rem;
+  }
+  .banner-text .job-title {
+    font-size: 1.3rem;
+  }
   /* Nav-bar */
   .nav-items.nav-bar-name {
     display: none;
@@ -613,6 +636,10 @@ table {
   #nav-bar .mycontainer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
+  }
+  .nav-items {
+    font-size: 0.8rem;
+    padding: 0.4rem 0;
   }
   .nav-items,
   .nav-items:first-child {
@@ -623,6 +650,7 @@ table {
     flex-direction: column;
     gap: 25px;
   }
+
   /* Job-info */
   #job-info .mycontainer {
     /* Use flex instead of grid because if I use grid, I'm gonna have to disable all the space specifying for every
@@ -656,7 +684,26 @@ table {
     text-align: center;
   }
   /* Footer */
+
   .hide {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #banner {
+    width: 100%;
+  }
+  .banner-text {
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    flex: 1 0 100%;
+  }
+  .banner-text .banner-title {
+    font-size: 2.5rem;
+  }
+  .banner-text .job-title {
+    font-size: 1.3rem;
   }
 }
